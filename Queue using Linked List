@@ -1,0 +1,39 @@
+import java.util.*;
+
+class Queue {
+    public LinkedList<Integer> q = new LinkedList<>();
+    public void push(int value) {
+        q.offer(value);
+    }
+    public int pop() {
+        return q.poll();
+    }
+    public int front() {
+        return q.peek();
+    }
+    public int getSize() {
+        return q.size();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Queue q = new Queue();
+        int n = sc.nextInt();
+        for(int i = 0; i < n; i++) {
+            int op = sc.nextInt();
+            if(op == 1) {
+                int x = sc.nextInt();
+                q.push(x);
+            }
+            else if(op == 2) {
+                System.out.println(q.pop());
+            }
+            else if(op == 3)
+                System.out.println(q.front());
+            else if(op == 4)
+                System.out.println(q.getSize());
+        }
+    }
+}
